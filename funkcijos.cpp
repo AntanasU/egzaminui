@@ -42,9 +42,9 @@ void puslapiai(string pav) {
         string zodis;
         //patikrina ar zodis yra svetaine
         while (eilute >> zodis) {
-            if (regex_match(zodis, regex("(http|https)://([^/ :]+):?([^/ ]*)(/?[^ #?]*)\\x3f?([^ #]*)#?([^ ]*)")) ||
-                regex_match(zodis, regex("^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$")))
-                puslapiai.push_back(zodis);
+            if (regex_match(zodis, regex("^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$")) ||
+                regex_match(zodis, regex("(http|https)://([^/ :]+):?([^/ ]*)(/?[^ #?]*)\\x3f?([^ #]*)#?([^ ]*)")))
+                    puslapiai.push_back(zodis);
         }
     }
     failas.close();
